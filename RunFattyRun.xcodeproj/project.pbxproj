@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		706E9A651F6929EE00A160AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E9A641F6929EE00A160AB /* AppDelegate.swift */; };
-		706E9A671F6929EE00A160AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E9A661F6929EE00A160AB /* ViewController.swift */; };
 		706E9A6A1F6929EE00A160AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706E9A681F6929EE00A160AB /* Main.storyboard */; };
 		706E9A6C1F6929EE00A160AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706E9A6B1F6929EE00A160AB /* Assets.xcassets */; };
 		706E9A6F1F6929EE00A160AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706E9A6D1F6929EE00A160AB /* LaunchScreen.storyboard */; };
 		706E9A7A1F6929EE00A160AB /* RunFattyRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E9A791F6929EE00A160AB /* RunFattyRunTests.swift */; };
 		706E9A851F6929EE00A160AB /* RunFattyRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E9A841F6929EE00A160AB /* RunFattyRunUITests.swift */; };
-		70E867E71F723B1500D578FC /* food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E867E61F723B1500D578FC /* food.swift */; };
-		70E867E91F723BB300D578FC /* resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E867E81F723BB300D578FC /* resturant.swift */; };
+		70E867E71F723B1500D578FC /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E867E61F723B1500D578FC /* Food.swift */; };
+		70E867E91F723BB300D578FC /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E867E81F723BB300D578FC /* Resturant.swift */; };
 		70E867EC1F723D3D00D578FC /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E867EB1F723D3D00D578FC /* FoodListViewController.swift */; };
+		7B3EF1501F7EEC65002C6A36 /* FoodBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EF14F1F7EEC65002C6A36 /* FoodBank.swift */; };
+		7B9F23811F7FFF7100680DD2 /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F23801F7FFF7100680DD2 /* RestaurantListViewController.swift */; };
+		7B9F23851F80052400680DD2 /* ChaseTheBurgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F23841F80052400680DD2 /* ChaseTheBurgerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,6 @@
 /* Begin PBXFileReference section */
 		706E9A611F6929EE00A160AB /* RunFattyRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunFattyRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706E9A641F6929EE00A160AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		706E9A661F6929EE00A160AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		706E9A691F6929EE00A160AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		706E9A6B1F6929EE00A160AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		706E9A6E1F6929EE00A160AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,9 +51,12 @@
 		706E9A801F6929EE00A160AB /* RunFattyRunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunFattyRunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		706E9A841F6929EE00A160AB /* RunFattyRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunFattyRunUITests.swift; sourceTree = "<group>"; };
 		706E9A861F6929EE00A160AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70E867E61F723B1500D578FC /* food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = food.swift; sourceTree = "<group>"; };
-		70E867E81F723BB300D578FC /* resturant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resturant.swift; sourceTree = "<group>"; };
+		70E867E61F723B1500D578FC /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		70E867E81F723BB300D578FC /* Resturant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
 		70E867EB1F723D3D00D578FC /* FoodListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
+		7B3EF14F1F7EEC65002C6A36 /* FoodBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBank.swift; sourceTree = "<group>"; };
+		7B9F23801F7FFF7100680DD2 /* RestaurantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
+		7B9F23841F80052400680DD2 /* ChaseTheBurgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseTheBurgerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +107,9 @@
 		706E9A631F6929EE00A160AB /* RunFattyRun */ = {
 			isa = PBXGroup;
 			children = (
+				7B3EF14E1F7EEA05002C6A36 /* controller */,
 				70E867EA1F723D2200D578FC /* views */,
 				70E867E51F723AC100D578FC /* models */,
-				706E9A641F6929EE00A160AB /* AppDelegate.swift */,
-				706E9A661F6929EE00A160AB /* ViewController.swift */,
-				706E9A681F6929EE00A160AB /* Main.storyboard */,
 				706E9A6B1F6929EE00A160AB /* Assets.xcassets */,
 				706E9A6D1F6929EE00A160AB /* LaunchScreen.storyboard */,
 				706E9A701F6929EE00A160AB /* Info.plist */,
@@ -136,8 +138,9 @@
 		70E867E51F723AC100D578FC /* models */ = {
 			isa = PBXGroup;
 			children = (
-				70E867E61F723B1500D578FC /* food.swift */,
-				70E867E81F723BB300D578FC /* resturant.swift */,
+				70E867E61F723B1500D578FC /* Food.swift */,
+				70E867E81F723BB300D578FC /* Resturant.swift */,
+				7B3EF14F1F7EEC65002C6A36 /* FoodBank.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -145,9 +148,20 @@
 		70E867EA1F723D2200D578FC /* views */ = {
 			isa = PBXGroup;
 			children = (
-				70E867EB1F723D3D00D578FC /* FoodListViewController.swift */,
+				706E9A681F6929EE00A160AB /* Main.storyboard */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		7B3EF14E1F7EEA05002C6A36 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				70E867EB1F723D3D00D578FC /* FoodListViewController.swift */,
+				706E9A641F6929EE00A160AB /* AppDelegate.swift */,
+				7B9F23801F7FFF7100680DD2 /* RestaurantListViewController.swift */,
+				7B9F23841F80052400680DD2 /* ChaseTheBurgerViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +227,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Burger Inc.";
 				TargetAttributes = {
 					706E9A601F6929EE00A160AB = {
@@ -284,11 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				706E9A671F6929EE00A160AB /* ViewController.swift in Sources */,
 				70E867EC1F723D3D00D578FC /* FoodListViewController.swift in Sources */,
+				7B9F23811F7FFF7100680DD2 /* RestaurantListViewController.swift in Sources */,
 				706E9A651F6929EE00A160AB /* AppDelegate.swift in Sources */,
-				70E867E91F723BB300D578FC /* resturant.swift in Sources */,
-				70E867E71F723B1500D578FC /* food.swift in Sources */,
+				70E867E91F723BB300D578FC /* Resturant.swift in Sources */,
+				7B9F23851F80052400680DD2 /* ChaseTheBurgerViewController.swift in Sources */,
+				70E867E71F723B1500D578FC /* Food.swift in Sources */,
+				7B3EF1501F7EEC65002C6A36 /* FoodBank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +369,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -361,7 +379,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -404,7 +426,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -412,7 +436,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
