@@ -8,9 +8,16 @@
 
 import Foundation
 
-class food {
+class Food {
     let name : String = ""
     let description : String? = nil
-    let kalories : Int = 0
+    let calories : Int = 0
     let image : String = "" /** Should be a reference to the burger image **/
+    
+    init(foodName: String, foodDescription: String, foodCalories: Int, foodImage: String) {
+        name = foodName
+        description = foodDescription
+        calories = foodCalories
+        image = foodImage
+    }
 }

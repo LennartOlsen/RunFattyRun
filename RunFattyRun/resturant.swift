@@ -8,7 +8,7 @@
 
 import Foundation
 
-class resturant {
+class Resturant {
     let name : String = ""
     let lat : Float = 0
     let lng : Float = 0
