@@ -33,6 +33,6 @@ class FoodBank {
         
         foodList.append(Food(foodName: "Sweet BBQ Bacon with 100% Pure Beef 1/4 lb. Patty", foodDescription : "Layered with BBQ sauce made with sweet onions, thick-cut Applewood smoked bacon, grilled & crispy onions, and smooth white cheddar*. On a 1/4lb.** of 100% pure beef with absolutely no fillers, additives, or preservatives. Choose an artisan roll or sesame seed bun.",   foodCalories : 700, foodImage : "t-mcdonalds-sweetbbqbacon-sesame.png"))
         
-        foodList.append(Food(foodName: "Double Quarter Pounder® with Cheese", foodDescription : "Two quarter pound( IngredientsÑ 100% Pure USDA Inspected Beefñ No Fillers, No Extenders. Prepared with Grill Seasoning )Salt, Black Pepper=. Layered with two slices of melty cheese, slivered onions and tangy pickles on sesame seed bun.",                 foodCalories : 770, foodImage : "t-mcdonalds-Double-Quarter-Pounder-with-Cheese.png"))
+        foodList.append(Food(foodName: "Double Quarter Pounder® with Cheese", foodDescription : "Two quarter pound( Ingredients 100% Pure USDA Inspected Beefñ No Fillers, No Extenders. Prepared with Grill Seasoning) Salt, Black Pepper. Layered with two slices of melty cheese, slivered onions and tangy pickles on sesame seed bun.",                 foodCalories : 770, foodImage : "t-mcdonalds-Double-Quarter-Pounder-with-Cheese.png"))
     }
 }
