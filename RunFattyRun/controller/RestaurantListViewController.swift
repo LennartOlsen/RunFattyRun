@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RestaurantListViewController : UIViewController{
+class RestaurantListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var searchForBurger : Int?
     
@@ -23,13 +23,33 @@ class RestaurantListViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        listRestaurants.beginUpdates()
-        listRestaurants.insertRows(at: [IndexPath(row: resturants.count - 1, section : 1)], with: .fade)
-        listRestaurants.endUpdates()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return resturants.count
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        cell.detailTextLabel?.text = resturants[indexPath.row].name
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        
     }
 }
