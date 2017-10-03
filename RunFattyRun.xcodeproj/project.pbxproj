@@ -232,6 +232,7 @@
 				TargetAttributes = {
 					706E9A601F6929EE00A160AB = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = X5EL62MCMB;
 						ProvisioningStyle = Automatic;
 					};
 					706E9A741F6929EE00A160AB = {
@@ -469,7 +470,7 @@
 		706E9A8A1F6929EE00A160AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X5EL62MCMB;
 				INFOPLIST_FILE = RunFattyRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.burgerfatties.RunFattyRun;
@@ -481,7 +482,7 @@
 		706E9A8B1F6929EE00A160AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X5EL62MCMB;
 				INFOPLIST_FILE = RunFattyRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.burgerfatties.RunFattyRun;

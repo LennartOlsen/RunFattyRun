@@ -33,6 +33,7 @@ class RestaurantListViewController : UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
+        print("view did load")
         return resturants.count
     }
     
@@ -43,8 +44,9 @@ class RestaurantListViewController : UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        cell.detailTextLabel?.text = resturants[indexPath.row].name
+        print("At table")
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        //cell.detailTextLabel?.text = resturants[indexPath.row].name
         return UITableViewCell()
     }
     
