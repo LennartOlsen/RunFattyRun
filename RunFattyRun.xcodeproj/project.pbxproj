@@ -13,8 +13,8 @@
 		706E9A6F1F6929EE00A160AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706E9A6D1F6929EE00A160AB /* LaunchScreen.storyboard */; };
 		706E9A7A1F6929EE00A160AB /* RunFattyRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E9A791F6929EE00A160AB /* RunFattyRunTests.swift */; };
 		706E9A851F6929EE00A160AB /* RunFattyRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E9A841F6929EE00A160AB /* RunFattyRunUITests.swift */; };
-		70E867E71F723B1500D578FC /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E867E61F723B1500D578FC /* Food.swift */; };
-		70E867E91F723BB300D578FC /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E867E81F723BB300D578FC /* Resturant.swift */; };
+		70D36DC71F83F353009868B7 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DC61F83F353009868B7 /* Food.swift */; };
+		70D36DCB1F83F3A1009868B7 /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DCA1F83F3A1009868B7 /* Resturant.swift */; };
 		70E867EC1F723D3D00D578FC /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E867EB1F723D3D00D578FC /* FoodListViewController.swift */; };
 		7B3EF1501F7EEC65002C6A36 /* FoodBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EF14F1F7EEC65002C6A36 /* FoodBank.swift */; };
 		7B9F23811F7FFF7100680DD2 /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F23801F7FFF7100680DD2 /* RestaurantListViewController.swift */; };
@@ -51,8 +51,8 @@
 		706E9A801F6929EE00A160AB /* RunFattyRunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunFattyRunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		706E9A841F6929EE00A160AB /* RunFattyRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunFattyRunUITests.swift; sourceTree = "<group>"; };
 		706E9A861F6929EE00A160AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70E867E61F723B1500D578FC /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		70E867E81F723BB300D578FC /* Resturant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
+		70D36DC61F83F353009868B7 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		70D36DCA1F83F3A1009868B7 /* Resturant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
 		70E867EB1F723D3D00D578FC /* FoodListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
 		7B3EF14F1F7EEC65002C6A36 /* FoodBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBank.swift; sourceTree = "<group>"; };
 		7B9F23801F7FFF7100680DD2 /* RestaurantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
@@ -138,9 +138,9 @@
 		70E867E51F723AC100D578FC /* models */ = {
 			isa = PBXGroup;
 			children = (
-				70E867E61F723B1500D578FC /* Food.swift */,
-				70E867E81F723BB300D578FC /* Resturant.swift */,
 				7B3EF14F1F7EEC65002C6A36 /* FoodBank.swift */,
+				70D36DC61F83F353009868B7 /* Food.swift */,
+				70D36DCA1F83F3A1009868B7 /* Resturant.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -298,12 +298,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D36DC71F83F353009868B7 /* Food.swift in Sources */,
+				70D36DCB1F83F3A1009868B7 /* Resturant.swift in Sources */,
 				70E867EC1F723D3D00D578FC /* FoodListViewController.swift in Sources */,
 				7B9F23811F7FFF7100680DD2 /* RestaurantListViewController.swift in Sources */,
 				706E9A651F6929EE00A160AB /* AppDelegate.swift in Sources */,
-				70E867E91F723BB300D578FC /* Resturant.swift in Sources */,
 				7B9F23851F80052400680DD2 /* ChaseTheBurgerViewController.swift in Sources */,
-				70E867E71F723B1500D578FC /* Food.swift in Sources */,
 				7B3EF1501F7EEC65002C6A36 /* FoodBank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
