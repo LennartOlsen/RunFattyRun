@@ -42,8 +42,13 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     // The data to return for the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return allFood.foodList[row].name
+    /*func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "bs"
+    }*/
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: allFood.foodList[row].name, attributes: [NSForegroundColorAttributeName : UIColor.white])
+        return attributedString
     }
     
     // Capture the picker view selection
