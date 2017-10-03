@@ -13,9 +13,16 @@ class FoodBank {
     var foodList = [Food]()
     
     init() {
-        foodList.append(Food(foodName: "skata1", foodDescription : "nsdans sadjkhasjkd jasdkjh sjkdh as ddjhakjshdkja adhkj ashdka sajd asd aj dkjasdjkhajkgkjfk gkfd fjdshgks", foodCalories : 100, foodImage : "skata1.jpg"))
-        foodList.append(Food(foodName: "skata2", foodDescription : "aposkata2", foodCalories : 122, foodImage : "skata2.jpg"))
-        foodList.append(Food(foodName: "skata3", foodDescription : "aposkata3", foodCalories : 123, foodImage : "skata3.jpg"))
-        foodList.append(Food(foodName: "skata4", foodDescription : "aposkata4", foodCalories : 1534, foodImage : "skata4.jpg"))
+        // List obtained from: https://www.mcdonalds.com/us/en-us/about-our-food/nutrition-calculator.html
+        foodList.append(Food(foodName: "Hamburger", foodDescription : "",                                           foodCalories : 250, foodImage : "t-mcdonalds-Hamburger.png"))
+        foodList.append(Food(foodName: "Cheeseburger", foodDescription : "",                                        foodCalories : 300, foodImage : "t-mcdonalds-Cheeseburger.png"))
+        foodList.append(Food(foodName: "McDouble®", foodDescription : "",                                           foodCalories : 380, foodImage : "t-mcdonalds-McDouble.png"))
+        foodList.append(Food(foodName: "Double Cheeseburger", foodDescription : "",                                 foodCalories : 430, foodImage : "t-mcdonalds-Double-Cheeseburger.png"))
+        foodList.append(Food(foodName: "Big Mac®", foodDescription : "",                                            foodCalories : 540, foodImage : "t-mcdonalds-Big-Mac.png"))
+        foodList.append(Food(foodName: "Quarter Pounder® with Cheese", foodDescription : "",                        foodCalories : 530, foodImage : "t-mcdonalds-Quarter-Pounder-with-Cheese.png"))
+        foodList.append(Food(foodName: "Signature Sriracha 1/4 lb. Burger", foodDescription : "",                   foodCalories : 580, foodImage : "t-mcdonalds-picoguac-sesame.png"))
+        foodList.append(Food(foodName: "Signature Sriracha 1/4 lb. Burger", foodDescription : "",                   foodCalories : 670, foodImage : "t-mcdonalds-sriracha-burger.png"))
+        foodList.append(Food(foodName: "Sweet BBQ Bacon with 100% Pure Beef 1/4 lb. Patty", foodDescription : "",   foodCalories : 700, foodImage : "t-mcdonalds-sweetbbqbacon-sesame.png"))
+        foodList.append(Food(foodName: "Double Quarter Pounder® with Cheese", foodDescription : "",                 foodCalories : 770, foodImage : "t-mcdonalds-Double-Quarter-Pounder-with-Cheese.png"))
     }
 }
