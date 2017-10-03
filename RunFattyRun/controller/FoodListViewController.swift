@@ -59,7 +59,7 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToRestaurantsView" {
-            let destinationVC = segue.destination as! RestaurantListViewController
+            let destinationVC = segue.destination as! ResturantTableViewController
             destinationVC.searchForBurger = selectedFood
         }
     }

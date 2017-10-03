@@ -13,9 +13,13 @@ class FoodBank {
     var foodList = [Food]()
     
     init() {
-        foodList.append(Food(foodName: "skata1", foodDescription : "nsdans sadjkhasjkd jasdkjh sjkdh as ddjhakjshdkja adhkj ashdka sajd asd aj dkjasdjkhajkgkjfk gkfd fjdshgks", foodCalories : 100, foodImage : "skata1.jpg"))
-        foodList.append(Food(foodName: "skata2", foodDescription : "aposkata2", foodCalories : 122, foodImage : "skata2.jpg"))
-        foodList.append(Food(foodName: "skata3", foodDescription : "aposkata3", foodCalories : 123, foodImage : "skata3.jpg"))
-        foodList.append(Food(foodName: "skata4", foodDescription : "aposkata4", foodCalories : 1534, foodImage : "skata4.jpg"))
+        foodList.append(Food(
+            foodName: "Mc Hamburger",
+            foodDescription : "Delicius Burger Food",
+            foodCalories : 100,
+            foodImage : "skata1.jpg"))
+        foodList.append(Food(foodName: "Mc Cheeseburger", foodDescription : "Nice burger with nice cheese", foodCalories : 122, foodImage : "skata2.jpg"))
+        foodList.append(Food(foodName: "Mc BigMac", foodDescription : "Burger with greens and stuff", foodCalories : 123, foodImage : "skata3.jpg"))
+        foodList.append(Food(foodName: "Mc SmallerMac", foodDescription : "Smaller burger with greens", foodCalories : 1534, foodImage : "skata4.jpg"))
     }
 }
