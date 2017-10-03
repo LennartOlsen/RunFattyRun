@@ -96,6 +96,7 @@
         <!--Restaurant List View Controller-->
         <scene sceneID="811-tn-Ydx">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TuF-rf-QUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="F5T-2i-80h" customClass="RestaurantListViewController" customModule="RunFattyRun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="459-gD-EQD"/>
@@ -190,7 +191,6 @@
                         <outlet property="listRestaurants" destination="qef-ga-Nd1" id="Tqf-u0-ibt"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TuF-rf-QUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="786.95652173913049" y="34.239130434782609"/>
         </scene>
