@@ -13,6 +13,7 @@
 		706E9A6F1F6929EE00A160AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706E9A6D1F6929EE00A160AB /* LaunchScreen.storyboard */; };
 		706E9A7A1F6929EE00A160AB /* RunFattyRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E9A791F6929EE00A160AB /* RunFattyRunTests.swift */; };
 		706E9A851F6929EE00A160AB /* RunFattyRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E9A841F6929EE00A160AB /* RunFattyRunUITests.swift */; };
+		709E661B1F849C0C00A429F4 /* Resturants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709E661A1F849C0C00A429F4 /* Resturants.swift */; };
 		70D36DC71F83F353009868B7 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DC61F83F353009868B7 /* Food.swift */; };
 		70D36DCB1F83F3A1009868B7 /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DCA1F83F3A1009868B7 /* Resturant.swift */; };
 		70D36DCF1F84108B009868B7 /* ResturantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DCE1F84108B009868B7 /* ResturantTableViewCell.swift */; };
@@ -52,6 +53,7 @@
 		706E9A801F6929EE00A160AB /* RunFattyRunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunFattyRunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		706E9A841F6929EE00A160AB /* RunFattyRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunFattyRunUITests.swift; sourceTree = "<group>"; };
 		706E9A861F6929EE00A160AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		709E661A1F849C0C00A429F4 /* Resturants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resturants.swift; sourceTree = "<group>"; };
 		70D36DC61F83F353009868B7 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		70D36DCA1F83F3A1009868B7 /* Resturant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
 		70D36DCE1F84108B009868B7 /* ResturantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		706E9A631F6929EE00A160AB /* RunFattyRun */ = {
 			isa = PBXGroup;
 			children = (
+				709E66191F849BDF00A429F4 /* repositories */,
 				7B3EF14E1F7EEA05002C6A36 /* controller */,
 				70E867EA1F723D2200D578FC /* views */,
 				70E867E51F723AC100D578FC /* models */,
@@ -135,6 +138,14 @@
 				706E9A861F6929EE00A160AB /* Info.plist */,
 			);
 			path = RunFattyRunUITests;
+			sourceTree = "<group>";
+		};
+		709E66191F849BDF00A429F4 /* repositories */ = {
+			isa = PBXGroup;
+			children = (
+				709E661A1F849C0C00A429F4 /* Resturants.swift */,
+			);
+			path = repositories;
 			sourceTree = "<group>";
 		};
 		70E867E51F723AC100D578FC /* models */ = {
@@ -308,6 +319,7 @@
 				70E867EC1F723D3D00D578FC /* FoodListViewController.swift in Sources */,
 				70D36DD11F841262009868B7 /* ResturantTableViewController.swift in Sources */,
 				706E9A651F6929EE00A160AB /* AppDelegate.swift in Sources */,
+				709E661B1F849C0C00A429F4 /* Resturants.swift in Sources */,
 				7B9F23851F80052400680DD2 /* ChaseTheBurgerViewController.swift in Sources */,
 				7B3EF1501F7EEC65002C6A36 /* FoodBank.swift in Sources */,
 			);
