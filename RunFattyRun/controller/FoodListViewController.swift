@@ -41,11 +41,6 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return allFood.foodList.count
     }
     
-    // The data to return for the row and component (column) that's being passed in
-    /*func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "bs"
-    }*/
-    
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let attributedString = NSAttributedString(string: allFood.foodList[row].name, attributes: [NSForegroundColorAttributeName : UIColor.white])
         return attributedString
@@ -55,7 +50,6 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedFood = row
         updateUI()
-        print(row)
     }
     
     @IBAction func findMeTheBurger(_ sender: Any) {
@@ -65,7 +59,7 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToRestaurantsView" {
             let destinationVC = segue.destination as! ResturantTableViewController
-            destinationVC.searchForBurger = selectedFood
+            destinationVC.selectedFood = allFood.foodList[selectedFood]
         }
     }
     
