@@ -164,40 +164,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chase The Burger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13U-dm-26L">
-                                <rect key="frame" x="20" y="42" width="374" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chase The Burger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13U-dm-26L" userLabel="heading">
+                                <rect key="frame" x="8" y="20" width="304" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance : 5 km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfM-eE-2qg">
-                                <rect key="frame" x="20" y="648" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calories : 200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRj-WF-w8O">
-                                <rect key="frame" x="20" y="686" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Now go and get it, you won't regret it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bes-t6-pcQ">
-                                <rect key="frame" x="20" y="95" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="Now go and get it, you won't regret it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bes-t6-pcQ" userLabel="subheading">
+                                <rect key="frame" x="8" y="70" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-Qg-gPO">
-                                <rect key="frame" x="20" y="136" width="374" height="497"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-Qg-gPO">
+                                <rect key="frame" x="8" y="99" width="304" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="2MR-Rd-MKa"/>
+                                </constraints>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories : 200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRj-WF-w8O" userLabel="calories">
+                                <rect key="frame" x="8" y="518" width="304" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance : 5 km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfM-eE-2qg" userLabel="distance">
+                                <rect key="frame" x="8" y="480" width="304" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="13U-dm-26L" firstAttribute="centerX" secondItem="Hsl-vj-Vdw" secondAttribute="centerX" id="0Th-hD-2Gw"/>
+                            <constraint firstItem="QMV-Qg-gPO" firstAttribute="leading" secondItem="QfM-eE-2qg" secondAttribute="leading" id="AsX-V0-Lz7"/>
+                            <constraint firstItem="13U-dm-26L" firstAttribute="leading" secondItem="Hsl-vj-Vdw" secondAttribute="leadingMargin" constant="-8" id="Ead-CS-5OA"/>
+                            <constraint firstItem="13U-dm-26L" firstAttribute="top" secondItem="coI-H9-KCV" secondAttribute="bottom" id="ITj-tk-vyS"/>
+                            <constraint firstItem="QMV-Qg-gPO" firstAttribute="top" secondItem="Bes-t6-pcQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Vae-5Z-eiI"/>
+                            <constraint firstItem="LRj-WF-w8O" firstAttribute="top" secondItem="QfM-eE-2qg" secondAttribute="bottom" constant="8" symbolic="YES" id="ZUU-nh-7vs"/>
+                            <constraint firstItem="QMV-Qg-gPO" firstAttribute="trailing" secondItem="QfM-eE-2qg" secondAttribute="trailing" id="fj6-V6-0Od"/>
+                            <constraint firstItem="Bes-t6-pcQ" firstAttribute="leading" secondItem="QMV-Qg-gPO" secondAttribute="leading" id="k4D-L0-yFu"/>
+                            <constraint firstItem="Bes-t6-pcQ" firstAttribute="trailing" secondItem="QMV-Qg-gPO" secondAttribute="trailing" id="nUx-Sd-5AP"/>
+                            <constraint firstItem="13U-dm-26L" firstAttribute="trailing" secondItem="Bes-t6-pcQ" secondAttribute="trailing" id="pnv-eq-FHs"/>
+                            <constraint firstAttribute="bottom" secondItem="LRj-WF-w8O" secondAttribute="bottom" constant="20" symbolic="YES" id="qec-eV-YGM"/>
+                            <constraint firstItem="QfM-eE-2qg" firstAttribute="leading" secondItem="LRj-WF-w8O" secondAttribute="leading" id="seF-8x-WT4"/>
+                            <constraint firstItem="13U-dm-26L" firstAttribute="leading" secondItem="Bes-t6-pcQ" secondAttribute="leading" id="tFM-Rp-w0z"/>
+                            <constraint firstItem="Bes-t6-pcQ" firstAttribute="top" secondItem="13U-dm-26L" secondAttribute="bottom" constant="8" symbolic="YES" id="tKV-ul-vK8"/>
+                            <constraint firstItem="QfM-eE-2qg" firstAttribute="trailing" secondItem="LRj-WF-w8O" secondAttribute="trailing" id="ubv-tZ-j1j"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="caloriesLabel" destination="LRj-WF-w8O" id="EKz-il-Smd"/>
@@ -206,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0i7-gG-P8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550.7246376811595" y="34.239130434782609"/>
+            <point key="canvasLocation" x="1550.625" y="33.802816901408448"/>
         </scene>
     </scenes>
     <resources>
