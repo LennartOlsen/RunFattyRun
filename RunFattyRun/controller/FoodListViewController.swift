@@ -24,8 +24,10 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // Do any additional setup after loading the view, typically from a nib.
         self.foodPicker.delegate = self
         self.foodPicker.dataSource = self
-        self.foodDescriptionLabel.text = allFood.foodList[selectedFood].description
-        self.foodCaloriesLabel.text = String(allFood.foodList[selectedFood].calories)
+        
+        /** Ive been murderous **/
+        //self.foodDescriptionLabel.text = allFood.foodList[selectedFood].description
+        //self.foodCaloriesLabel.text = String(allFood.foodList[selectedFood].calories)
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,8 +66,8 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func updateUI() {
-        self.foodDescriptionLabel.text = allFood.foodList[selectedFood].description
-        self.foodCaloriesLabel.text = String(allFood.foodList[selectedFood].calories)
+        //self.foodDescriptionLabel.text = allFood.foodList[selectedFood].description
+        //self.foodCaloriesLabel.text = String(allFood.foodList[selectedFood].calories)
     }
 }
 
