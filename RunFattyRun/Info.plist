@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>We will add all the sums of your burger munching life style</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>We need to know if you have been good or bad for sanata</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -37,12 +31,22 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array>
 		<string>MKDirectionsModePedestrian</string>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We need to know if you have been good or bad for sanata</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We will add all the sums of your burger munching life style</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Give me your location so you can chase the burger!!!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Give me your location so you can chase the burger!!!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -7,19 +7,20 @@
 //
 
 import Foundation
-
 import UIKit
-
+import CoreLocation
 import HealthKit
 
-class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
     
-    @IBOutlet weak var foodDescriptionLabel: UILabel!
+    @IBOutlet weak var foodDescriptionLabel: UITextView!
     @IBOutlet weak var foodPicker: UIPickerView!
     @IBOutlet weak var foodCaloriesLabel: UILabel!
+    @IBOutlet weak var foodImg: UIImageView!
+    @IBOutlet weak var btnFindBurger: UIButton!
     
     let allFood = FoodBank()
-    
+    let locationManager = CLLocationManager()
     var healther : Healter?
     var selectedFood : Int = 0
     
@@ -28,11 +29,18 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // Do any additional setup after loading the view, typically from a nib.
         self.foodPicker.delegate = self
         self.foodPicker.dataSource = self
+        foodPicker.backgroundColor? = UIColor.black
+        foodPicker.selectRow((allFood.foodList.count/2)-1, inComponent: 0, animated: true)
+        btnFindBurger.layer.borderWidth = 2
+        btnFindBurger.layer.borderColor = UIColor.white.cgColor
+        self.foodDescriptionLabel.text = allFood.foodList[(allFood.foodList.count/2)-1].description
+        self.foodCaloriesLabel.text = String(allFood.foodList[(allFood.foodList.count/2)-1].calories)
+        self.foodImg.image = UIImage(named:allFood.foodList[(allFood.foodList.count/2)-1].image)
         
-        /** Ive been murderous **/
-        //self.foodDescriptionLabel.text = allFood.foodList[selectedFood].description
-        //self.foodCaloriesLabel.text = String(allFood.foodList[selectedFood].calories)
-        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         doHealthKit()
     }
     
@@ -89,6 +97,26 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
     
+    //Location Manager Delegate Methods
+    /***************************************************************/
+    //Write the didUpdateLocations method here:
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[locations.count - 1]
+        if location.horizontalAccuracy > 0 {
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            print("location = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+        }
+    }
+
+    //Write the didFailWithError method here:
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToRestaurantsView" {
             let destinationVC = segue.destination as! ResturantTableViewController
@@ -97,8 +125,9 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func updateUI() {
-        //self.foodDescriptionLabel.text = allFood.foodList[selectedFood].description
-        //self.foodCaloriesLabel.text = String(allFood.foodList[selectedFood].calories)
+        self.foodDescriptionLabel.text = allFood.foodList[selectedFood].description
+        self.foodCaloriesLabel.text = String(allFood.foodList[selectedFood].calories)
+        self.foodImg.image = UIImage(named : allFood.foodList[selectedFood].image)
     }
 }
 
