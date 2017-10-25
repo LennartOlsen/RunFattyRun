@@ -18,6 +18,7 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var foodCaloriesLabel: UILabel!
     @IBOutlet weak var foodImg: UIImageView!
     @IBOutlet weak var btnFindBurger: UIButton!
+    @IBOutlet weak var calLabel: UILabel!
     
     let allFood = FoodBank()
     let locationManager = CLLocationManager()
@@ -47,6 +48,21 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        foodImg.center.x  -= view.bounds.width
+        foodCaloriesLabel.center.x += view.bounds.width
+        calLabel.center.x += view.bounds.width
+        UIView.animate(withDuration: 0.7,delay: 0.3, options: [],
+           animations: {
+            self.foodImg.center.x += self.view.bounds.width
+            self.foodCaloriesLabel.center.x -= self.view.bounds.width
+            self.calLabel.center.x -= self.view.bounds.width
+        },
+           completion: nil
+        )
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
