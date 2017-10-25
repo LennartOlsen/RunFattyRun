@@ -16,6 +16,8 @@
 		709E661B1F849C0C00A429F4 /* Resturants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709E661A1F849C0C00A429F4 /* Resturants.swift */; };
 		709FC1711F8E058A00850BBE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 709FC1701F8E058A00850BBE /* HealthKit.framework */; };
 		709FC1741F8E059000850BBE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 709FC1731F8E059000850BBE /* MapKit.framework */; };
+		709FC1761F8E0A3A00850BBE /* Healther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709FC1751F8E0A3A00850BBE /* Healther.swift */; };
+		709FC1781F8E196000850BBE /* HealtkitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709FC1771F8E196000850BBE /* HealtkitHelper.swift */; };
 		70D36DC71F83F353009868B7 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DC61F83F353009868B7 /* Food.swift */; };
 		70D36DCB1F83F3A1009868B7 /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DCA1F83F3A1009868B7 /* Resturant.swift */; };
 		70D36DCF1F84108B009868B7 /* ResturantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DCE1F84108B009868B7 /* ResturantTableViewCell.swift */; };
@@ -60,6 +62,8 @@
 		709FC1701F8E058A00850BBE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		709FC1721F8E058A00850BBE /* RunFattyRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunFattyRun.entitlements; sourceTree = "<group>"; };
 		709FC1731F8E059000850BBE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		709FC1751F8E0A3A00850BBE /* Healther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Healther.swift; sourceTree = "<group>"; };
+		709FC1771F8E196000850BBE /* HealtkitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealtkitHelper.swift; sourceTree = "<group>"; };
 		70D36DC61F83F353009868B7 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		70D36DCA1F83F3A1009868B7 /* Resturant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
 		70D36DCE1F84108B009868B7 /* ResturantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantTableViewCell.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				706E9A6B1F6929EE00A160AB /* Assets.xcassets */,
 				706E9A6D1F6929EE00A160AB /* LaunchScreen.storyboard */,
 				706E9A701F6929EE00A160AB /* Info.plist */,
+				709FC1771F8E196000850BBE /* HealtkitHelper.swift */,
 			);
 			path = RunFattyRun;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				709E661A1F849C0C00A429F4 /* Resturants.swift */,
+				709FC1751F8E0A3A00850BBE /* Healther.swift */,
 			);
 			path = repositories;
 			sourceTree = "<group>";
@@ -355,7 +361,9 @@
 				70D36DCF1F84108B009868B7 /* ResturantTableViewCell.swift in Sources */,
 				70E867EC1F723D3D00D578FC /* FoodListViewController.swift in Sources */,
 				70FDFC231F855D4800342463 /* StickyListHeaderView.swift in Sources */,
+				709FC1781F8E196000850BBE /* HealtkitHelper.swift in Sources */,
 				70D36DD11F841262009868B7 /* ResturantTableViewController.swift in Sources */,
+				709FC1761F8E0A3A00850BBE /* Healther.swift in Sources */,
 				706E9A651F6929EE00A160AB /* AppDelegate.swift in Sources */,
 				709E661B1F849C0C00A429F4 /* Resturants.swift in Sources */,
 				7B9F23851F80052400680DD2 /* ChaseTheBurgerViewController.swift in Sources */,

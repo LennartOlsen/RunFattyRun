@@ -10,6 +10,8 @@ import Foundation
 
 import UIKit
 
+import HealthKit
+
 class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var foodDescriptionLabel: UILabel!
@@ -17,6 +19,8 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var foodCaloriesLabel: UILabel!
     
     let allFood = FoodBank()
+    
+    var healther : Healter?
     var selectedFood : Int = 0
     
     override func viewDidLoad() {
@@ -28,6 +32,8 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         /** Ive been murderous **/
         //self.foodDescriptionLabel.text = allFood.foodList[selectedFood].description
         //self.foodCaloriesLabel.text = String(allFood.foodList[selectedFood].calories)
+        
+        doHealthKit()
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +62,31 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBAction func findMeTheBurger(_ sender: Any) {
         performSegue(withIdentifier: "goToRestaurantsView", sender: self)
+    }
+    
+    @IBAction func activateHealthKit(_ sender: Any) {
+        doHealthKit()
+    }
+    
+    private func doHealthKit(){
+        HealtkitHelper.authorizeHealthKit { (authorized, error) in
+            
+            guard authorized else {
+                
+                let baseMessage = "HealthKit Authorization Failed"
+                
+                if let error = error {
+                    print("\(baseMessage). Reason: \(error.localizedDescription)")
+                } else {
+                    print(baseMessage)
+                }
+                
+                return
+            }
+            
+            print("HealthKit Successfully Authorized.")
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
