@@ -21,7 +21,6 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate {
     
     var resturantList : [Resturant] = []
     
-    
     /** TableView and HeaderView **/
     @IBOutlet var tableView : UITableView!
     
