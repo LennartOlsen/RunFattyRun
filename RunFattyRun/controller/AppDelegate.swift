@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let view = window!.rootViewController!.view!
         
         let logoLayer = CALayer()
-        logoLayer.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
+        logoLayer.bounds = CGRect(x: 0, y: 0, width: 250, height: 250)
         logoLayer.position = view.center
         logoLayer.contents = UIImage(named: "logo")?.cgImage
         view.layer.mask = logoLayer
@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let logoAnimation = CAKeyframeAnimation(keyPath: "bounds")
         logoAnimation.beginTime = CACurrentMediaTime() + 1
         logoAnimation.duration = 1.5
-        logoAnimation.keyTimes = [0, 0.4, 1.5]
-        logoAnimation.values = [NSValue(cgRect: CGRect(x: 0, y: 0, width: 200, height: 200)),
+        logoAnimation.keyTimes = [0, 0.1, 1.5]
+        logoAnimation.values = [NSValue(cgRect: CGRect(x: 0, y: 0, width: 250, height: 250)),
                                 NSValue(cgRect: CGRect(x: 0, y: 0, width: 100, height: 100)),
                                 NSValue(cgRect: CGRect(x: 0, y: 0, width: 4500, height: 4500))]
         logoAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),

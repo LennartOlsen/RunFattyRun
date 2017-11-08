@@ -21,24 +21,15 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate {
     
     var resturantList : [Resturant] = []
     
-    @IBOutlet weak var selectedBurgerLabel: UILabel!
     
     /** TableView and HeaderView **/
     @IBOutlet var tableView : UITableView!
-    var headerView : StickyListHeaderView!
-    var headerHeightConstraint : NSLayoutConstraint!
     
     var allFoods = FoodBank()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resturantList = ResturantRepository().getAll()
-        
-        view.backgroundColor = UIColor.black /** <-- To change **/
-        
-        setUpHeader()
-        setUpView()
-        
     }
     
     override func viewWillAppear(_ animated : Bool) {
@@ -67,45 +58,10 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    func setUpView(){
-        tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tableView)
-        let constraints:[NSLayoutConstraint] = [
-            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ]
-        NSLayoutConstraint.activate(constraints)
-        tableView.register(ResturantTableViewCell.self,forCellReuseIdentifier: "ResturantTableViewCell")
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NSLog("You selected cell number: \(indexPath.row)!")
         self.selectedResturant = resturantList[indexPath.row]
         self.performSegue(withIdentifier: "goToChaseTheBurgerView", sender: self)
-    }
-    
-    func setUpHeader(){
-        var bgImage = UIImage(named: "burgerImageName")
-        if let burgerImageName = selectedFood?.image {
-            bgImage = UIImage(named: burgerImageName)
-        }
-        let iconImage = #imageLiteral(resourceName: "hamburger")
-        headerView = StickyListHeaderView(frame: CGRect.zero, title: "Available Resturants", backgroundImage: bgImage, iconImage: iconImage)
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(headerView)
-        headerHeightConstraint = headerView.heightAnchor.constraint(equalToConstant: 150)
-        headerHeightConstraint.isActive = true
-        let constraints:[NSLayoutConstraint] = [
-            headerView.topAnchor.constraint(equalTo: view.topAnchor),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ]
-        NSLayoutConstraint.activate(constraints)
     }
 }
 
