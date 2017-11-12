@@ -290,6 +290,7 @@
                     <connections>
                         <outlet property="caloriesLabel" destination="LRj-WF-w8O" id="EKz-il-Smd"/>
                         <outlet property="distanceLabel" destination="QfM-eE-2qg" id="uPH-C0-35S"/>
+                        <outlet property="mapView" destination="QMV-Qg-gPO" id="Zqv-mD-x8b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0i7-gG-P8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
