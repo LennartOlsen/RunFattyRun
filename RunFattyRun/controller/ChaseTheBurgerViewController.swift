@@ -54,6 +54,13 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         let destPlacemark = MKPlacemark(coordinate: destCoordinates)
         let destItem = MKMapItem(placemark: destPlacemark)
         
+        // Place Burger Placemark
+        let annotation = MKPointAnnotation()
+        //let centerCoordinate = CLLocationCoordinate2D(latitude: 41, longitude:29)
+        annotation.coordinate = destCoordinates
+        annotation.title = "Title"
+        mapView.addAnnotation(annotation)
+        
         // Direction Request
         let directionRequest = MKDirectionsRequest()
         directionRequest.source = sourceItem
@@ -80,12 +87,34 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         })
     }
     
+    // MapView - Location Line
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor.red
         renderer.lineWidth = 5.0
         
         return renderer
+    }
+    
+    // MapView - Location Pin
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "MyPin"
+        
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+            annotationView?.image = resizeImage(image:UIImage(named: "burger_256")!, newWidth: 32)
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        return annotationView
     }
     
     /*
@@ -95,6 +124,19 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         mapView.setRegion(region, animated: true)
     }
      */
+
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+  
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
