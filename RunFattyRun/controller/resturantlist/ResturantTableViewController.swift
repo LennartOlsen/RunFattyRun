@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 /**
  * TODO : Could be a UITableViewController, but creates sporadic errors
@@ -21,13 +22,18 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate {
     
     var resturantList : [Resturant] = []
     
+    var userLocation : CLLocation?
+    
     /** TableView and HeaderView **/
     @IBOutlet var tableView : UITableView!
     
     var allFoods = FoodBank()
     override func viewDidLoad() {
         super.viewDidLoad()
-        resturantList = ResturantRepository().getAll()
+       
+        if let loc = userLocation {
+            resturantList = ResturantRepository().getByDistance(currentLocation: loc)
+        }
     }
     
     override func viewWillAppear(_ animated : Bool) {

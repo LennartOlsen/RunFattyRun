@@ -6,14 +6,16 @@
 //  Copyright © 2017 Burger Inc. All rights reserved.
 //
 
+import CoreLocation
+
 class Resturant {
     let name : String
-    let lat : Float
-    let lng : Float
+    let location : CLLocation
+    var distanceFrom : CLLocationDistance?
     
-    init(Name : String, Lat : Float, Lng : Float){
+    init(Name : String, Location : CLLocation){
         name = Name
-        lat = Lat
-        lng = Lng
+        location = Location
+        distanceFrom = nil
     }
 }

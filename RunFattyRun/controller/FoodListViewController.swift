@@ -25,6 +25,8 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var healther : Healter?
     var selectedFood : Int = 0
     
+    var location : CLLocation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -122,6 +124,7 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             locationManager.stopUpdatingLocation()
             locationManager.delegate = nil
             print("location = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
+            self.location = location
             let latitude = location.coordinate.latitude
             let longitude = location.coordinate.longitude
         }
@@ -137,6 +140,7 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         if segue.identifier == "goToRestaurantsView" {
             let destinationVC = segue.destination as! ResturantTableViewController
             destinationVC.selectedFood = allFood.foodList[selectedFood]
+            destinationVC.userLocation = self.location
         }
     }
     
