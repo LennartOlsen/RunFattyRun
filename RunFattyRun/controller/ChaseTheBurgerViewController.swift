@@ -122,6 +122,14 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         return annotationView
     }
     
+    // Called when Location is Updated
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation: CLLocation = locations[0]
+        let long = userLocation.coordinate.longitude
+        let lat = userLocation.coordinate.latitude
+        print("LATLON MDAFAKA: \(long), \(lat)")
+    }
+    
     /*
     func zoomToRegion() {
         let location = CLLocationCoordinate2D(latitude: 13.03297, longitude: 80.26518)
