@@ -50,7 +50,10 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         let sourceItem = MKMapItem(placemark: sourcePlacemark)
         
         // Destination Coordinates
-        let destCoordinates = CLLocationCoordinate2DMake(55.395804, 10.337553)
+        var destCoordinates = CLLocationCoordinate2DMake(55.395804, 10.337553) /** Dummy cordinates **/
+        if let rest = selectedResturant {
+            destCoordinates = rest.location.coordinate
+        }
         let destPlacemark = MKPlacemark(coordinate: destCoordinates)
         let destItem = MKMapItem(placemark: destPlacemark)
         
@@ -80,7 +83,9 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
             
             let route = response.routes[0]
             self.mapView.add(route.polyline, level: .aboveRoads)
-            
+            if let dlbl = self.distanceLabel {
+                dlbl.text = String(route.distance / 1000) + " KM"
+            }
             let rekt = route.polyline.boundingMapRect
             self.mapView.setRegion(MKCoordinateRegionForMapRect(rekt), animated: true)
             
