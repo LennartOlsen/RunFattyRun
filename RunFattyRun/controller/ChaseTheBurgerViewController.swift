@@ -51,8 +51,10 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         // Destination Coordinates
         var destCoordinates = CLLocationCoordinate2DMake(55.395804, 10.337553) /** Dummy cordinates **/
+        print(destCoordinates)
         if let rest = selectedResturant {
             destCoordinates = rest.location.coordinate
+            print(destCoordinates)
         }
         let destPlacemark = MKPlacemark(coordinate: destCoordinates)
         let destItem = MKMapItem(placemark: destPlacemark)
