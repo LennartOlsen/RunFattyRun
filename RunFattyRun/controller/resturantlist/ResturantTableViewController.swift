@@ -38,18 +38,7 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
         tableView.contentInset = UIEdgeInsets(top:kTableHeaderHeight,left:0, bottom:0,right:0)
         tableView.contentOffset = CGPoint(x:0, y:-kTableHeaderHeight)
         updateHeaderView()
-    
-        if let loc = userLocation {
-            if let food = selectedFood {
-                let distance = Double(food.calories * 10) /** There is 10 metres on one calorie **/
-                let resturants = ResturantRepository().getByDistance(currentLocation : loc,
-                                                                     minDistance : distance * 0.5,
-                                                                     maxDistance: distance * 2)
-                NSLog("Resutrant count \(resturants.count)")
-                getOrderedResturants(resturants: resturants)
-                
-            }
-        }
+        updateTableListView()
     }
     
     override func viewWillAppear(_ animated : Bool) {
@@ -128,6 +117,24 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
             }
         }
         
+    }
+
+    func updateTableListView() {
+        NSLog("resturantList length \(resturantList.count)")
+        resturantList.removeAll()
+        tableView.reloadData()
+        
+        if let loc = userLocation {
+            if let food = selectedFood {
+                let distance = Double(food.calories * 10) /** There is 10 metres on one calorie **/
+                let resturants = ResturantRepository().getByDistance(currentLocation : loc,
+                                                                     minDistance : distance * 0.5,
+                                                                     maxDistance: distance * 2)
+                NSLog("Resutrant count \(resturants.count)")
+                getOrderedResturants(resturants: resturants)
+                
+            }
+        }
     }
     
     func addResturantToList(resturant : Resturant){
