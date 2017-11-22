@@ -55,12 +55,12 @@ private var resturants = [Resturant]()
 
 private func loadResturants() {
     
-    resturants += [
+    resturants = [
         /** Region Hovedstaden **/
         Resturant(Name: "Mc Donalds Ballerup", Location : CLLocation(latitude: 55.722275, longitude: 12.3843229)),
-        Resturant(Name: "Mc Donalds Birkerød", Location : CLLocation(latitude: 56, longitude: 10)),
-        Resturant(Name: "Mc Donalds Frederiksund", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Frederiksværk", Location : CLLocation(latitude: 54, longitude: 10)),
+        Resturant(Name: "Mc Donalds Birkerød", Location : CLLocation(latitude: 55.840972, longitude: 12.440993)),
+        Resturant(Name: "Mc Donalds Frederiksund", Location : CLLocation(latitude: 55.843465, longitude: 12.075541)),
+        Resturant(Name: "Mc Donalds Frederiksværk", Location : CLLocation(latitude: 55.968731, longitude: 12.029236)),
         Resturant(Name: "Mc Donalds Gentofte", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Helsingør", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Herlev", Location : CLLocation(latitude: 54, longitude: 10)),
@@ -101,15 +101,15 @@ private func loadResturants() {
         Resturant(Name: "Mc Donalds Fredericia", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Haderslev", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Kolding", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Middelfart", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Nyborg", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Odense (Hjallese)", Location : CLLocation(latitude: 54, longitude: 10)),
+        Resturant(Name: "Mc Donalds Middelfart", Location : CLLocation(latitude: 55.510036, longitude: 9.768050)),
+        Resturant(Name: "Mc Donalds Nyborg", Location : CLLocation(latitude: 55.309103, longitude: 10.806226)),
+        Resturant(Name: "Mc Donalds Odense (Hjallese)", Location : CLLocation(latitude: 55.353440, longitude: 10.404405)),
         Resturant(Name: "Mc Donalds Odense (Kongensgade)", Location : CLLocation(latitude: 55.395554, longitude: 10.382424)),
-        Resturant(Name: "Mc Donalds Odense (Odense Banegårdcenter)", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Odense (Rosengårscenteret)", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Odense (Tarup Center)", Location : CLLocation(latitude: 54, longitude: 10)),
+        Resturant(Name: "Mc Donalds Odense (Odense Banegårdcenter)", Location : CLLocation(latitude: 55.401496, longitude: 10.387118)),
+        Resturant(Name: "Mc Donalds Odense (Rosengårscenteret)", Location : CLLocation(latitude: 55.383741, longitude: 10.426444)),
+        Resturant(Name: "Mc Donalds Odense (Tarup Center)", Location : CLLocation(latitude: 55.409506, longitude: 10.339169)),
         Resturant(Name: "Mc Donalds Rødekro", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Svendborg", Location : CLLocation(latitude: 54, longitude: 10)),
+        Resturant(Name: "Mc Donalds Svendborg", Location : CLLocation(latitude: 55.060634, longitude: 10.600093)),
         Resturant(Name: "Mc Donalds Sønderborg", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Tønder", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Varde", Location : CLLocation(latitude: 54, longitude: 10)),
