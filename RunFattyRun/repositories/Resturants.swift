@@ -19,13 +19,35 @@ class ResturantRepository {
     func getAll() -> [Resturant] {
         return resturants
     }
-    func getByDistance(currentLocation : CLLocation) -> [Resturant]{
+    func getByDistance(currentLocation : CLLocation, minDistance : Double, maxDistance : Double) -> [Resturant]{
+        /** Calculate distances on resturants **/
         for rest in resturants {
-            let dist = currentLocation.distance(from: rest.location)
-            NSLog("Distance to resturant \(dist)")
             rest.distanceFrom = currentLocation.distance(from: rest.location)
         }
-        return resturants
+        /** order by distance ascending **/
+        resturants = resturants.sorted(by : {Double($0.distanceFrom!) < Double($1.distanceFrom!)})
+        
+        var returnValue : [Resturant] = []
+        
+        /** Push them into array based on distance **/
+        for rest in resturants {
+            if(rest.distanceFrom! > minDistance && rest.distanceFrom! < maxDistance){
+                returnValue.append(rest)
+            }
+        }
+        
+        /** Previous array could be empty (most likey is) Update for performance **/
+        if(returnValue.count < 1){
+            for rest in resturants {
+                if(rest.distanceFrom! > maxDistance){
+                    returnValue.append(rest)
+                    
+                    return returnValue
+                }
+            }
+        }
+        
+        return returnValue
     }
 }
 
@@ -35,7 +57,7 @@ private func loadResturants() {
     
     resturants += [
         /** Region Hovedstaden **/
-        Resturant(Name: "Mc Donalds Ballerup", Location : CLLocation(latitude: 55, longitude: 10)),
+        Resturant(Name: "Mc Donalds Ballerup", Location : CLLocation(latitude: 55.722275, longitude: 12.3843229)),
         Resturant(Name: "Mc Donalds Birkerød", Location : CLLocation(latitude: 56, longitude: 10)),
         Resturant(Name: "Mc Donalds Frederiksund", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Frederiksværk", Location : CLLocation(latitude: 54, longitude: 10)),
@@ -82,7 +104,7 @@ private func loadResturants() {
         Resturant(Name: "Mc Donalds Middelfart", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Nyborg", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Odense (Hjallese)", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Odense (Kongensgade)", Location : CLLocation(latitude: 54, longitude: 10)),
+        Resturant(Name: "Mc Donalds Odense (Kongensgade)", Location : CLLocation(latitude: 55.395554, longitude: 10.382424)),
         Resturant(Name: "Mc Donalds Odense (Odense Banegårdcenter)", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Odense (Rosengårscenteret)", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Odense (Tarup Center)", Location : CLLocation(latitude: 54, longitude: 10)),
@@ -92,7 +114,7 @@ private func loadResturants() {
         Resturant(Name: "Mc Donalds Tønder", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Varde", Location : CLLocation(latitude: 54, longitude: 10)),
         Resturant(Name: "Mc Donalds Vejen", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Vejle (GateWay E45)", Location : CLLocation(latitude: 54, longitude: 10)),
-        Resturant(Name: "Mc Donalds Vejle (Vinding)", Location : CLLocation(latitude: 54, longitude: 10)),
+        Resturant(Name: "Mc Donalds Vejle (GateWay E45)", Location : CLLocation(latitude: 55.748981, longitude: 9.589442)),
+        Resturant(Name: "Mc Donalds Vejle (Vinding)", Location : CLLocation(latitude: 55.674754, longitude: 9.580127)),
     ]
 }

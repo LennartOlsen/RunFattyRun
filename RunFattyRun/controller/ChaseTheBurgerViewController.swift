@@ -69,7 +69,7 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         directionRequest.source = sourceItem
         directionRequest.destination = destItem
         directionRequest.transportType = .walking
-        
+        NSLog("Got User " + String(describing : sourceCoordinates) + " BURGER " + String(describing : destCoordinates) )
         let directions = MKDirections(request: directionRequest)
         directions.calculate(completionHandler: {
             response, error in
@@ -77,6 +77,7 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
             guard let response = response else {
                 if let error = error {
                     print("Could not get proper directions: "+error.localizedDescription)
+                    NSLog(String(describing: error))
                 }
                 return
             }

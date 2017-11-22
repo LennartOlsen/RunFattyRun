@@ -22,7 +22,6 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     let allFood = FoodBank()
     let locationManager = CLLocationManager()
-    var healther : Healter?
     var selectedFood : Int = 0
     
     var location : CLLocation?
@@ -44,7 +43,6 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        doHealthKit()
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,31 +88,6 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         performSegue(withIdentifier: "goToRestaurantsView", sender: self)
     }
     
-    @IBAction func activateHealthKit(_ sender: Any) {
-        doHealthKit()
-    }
-    
-    private func doHealthKit(){
-        HealtkitHelper.authorizeHealthKit { (authorized, error) in
-            
-            guard authorized else {
-                
-                let baseMessage = "HealthKit Authorization Failed"
-                
-                if let error = error {
-                    print("\(baseMessage). Reason: \(error.localizedDescription)")
-                } else {
-                    print(baseMessage)
-                }
-                
-                return
-            }
-            
-            print("HealthKit Successfully Authorized.")
-            
-        }
-    }
-    
     //Location Manager Delegate Methods
     /***************************************************************/
     //Write the didUpdateLocations method here:
@@ -125,8 +98,6 @@ class FoodListViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             locationManager.delegate = nil
             print("location = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
             self.location = location
-            let latitude = location.coordinate.latitude
-            let longitude = location.coordinate.longitude
         }
     }
 
