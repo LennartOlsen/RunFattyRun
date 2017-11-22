@@ -130,6 +130,8 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         let userLocation: CLLocation = locations[0]
         let long = userLocation.coordinate.longitude
         let lat = userLocation.coordinate.latitude
+        let distance = selectedResturant?.DistanceFrom(sourceLocation: userLocation)
+        distanceLabel.text = String(distance! / 1000) + " KM"
         print("LATLON MDAFAKA: \(long), \(lat)")
     }
     /*

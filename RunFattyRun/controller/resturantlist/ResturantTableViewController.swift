@@ -50,6 +50,7 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
                 
             }
         }
+        updateTableListView()
     }
     
     override func viewWillAppear(_ animated : Bool) {
@@ -128,6 +129,24 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
             }
         }
         
+    }
+
+    func updateTableListView() {
+        NSLog("resturantList length \(resturantList.count)")
+        resturantList.removeAll()
+        tableView.reloadData()
+        
+        if let loc = userLocation {
+            if let food = selectedFood {
+                let distance = Double(food.calories * 10) /** There is 10 metres on one calorie **/
+                let resturants = ResturantRepository().getByDistance(currentLocation : loc,
+                                                                     minDistance : distance * 0.5,
+                                                                     maxDistance: distance * 2)
+                NSLog("Resutrant count \(resturants.count)")
+                getOrderedResturants(resturants: resturants)
+                
+            }
+        }
     }
     
     func addResturantToList(resturant : Resturant){
