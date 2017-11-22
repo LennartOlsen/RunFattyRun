@@ -10,7 +10,7 @@ import Foundation
 
 import HealthKit
 
-class Healter {
+class Healther {
     
     let today           : Date
     let yesterday       : Date
