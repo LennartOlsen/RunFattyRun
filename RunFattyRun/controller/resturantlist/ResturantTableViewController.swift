@@ -31,8 +31,14 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
     var allFoods = FoodBank()
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-       
+
+        headerView = tableView.tableHeaderView
+        tableView.tableHeaderView = nil
+        tableView.addSubview(headerView)
+        tableView.contentInset = UIEdgeInsets(top:kTableHeaderHeight,left:0, bottom:0,right:0)
+        tableView.contentOffset = CGPoint(x:0, y:-kTableHeaderHeight)
+        updateHeaderView()
+    
         if let loc = userLocation {
             if let food = selectedFood {
                 let distance = Double(food.calories * 10) /** There is 10 metres on one calorie **/
@@ -44,15 +50,6 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
                 
             }
         }
-=======
-        headerView = tableView.tableHeaderView
-        tableView.tableHeaderView = nil
-        tableView.addSubview(headerView)
-        tableView.contentInset = UIEdgeInsets(top:kTableHeaderHeight,left:0, bottom:0,right:0)
-        tableView.contentOffset = CGPoint(x:0, y:-kTableHeaderHeight)
-        updateHeaderView()
-        resturantList = ResturantRepository().getAll()
->>>>>>> master
     }
     
     override func viewWillAppear(_ animated : Bool) {
@@ -93,7 +90,6 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
         self.performSegue(withIdentifier: "goToChaseTheBurgerView", sender: self)
     }
     
-<<<<<<< HEAD
     func getOrderedResturants(resturants : [Resturant]? ){
         // Source Coordinates
         let sourceCoordinates = userLocation?.coordinate
@@ -143,7 +139,8 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
         self.tableView.beginUpdates()
         self.tableView.insertRows(at: [indexPath], with: .automatic)
         self.tableView.endUpdates()
-=======
+    }
+    
     func updateHeaderView() {
         var headerRect = CGRect(x:0, y: -kTableHeaderHeight, width:tableView.bounds.width,height: kTableHeaderHeight)
         if tableView.contentOffset.y < -kTableHeaderHeight {
@@ -155,7 +152,6 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateHeaderView()
->>>>>>> master
     }
 }
 
@@ -172,17 +168,10 @@ extension ResturantTableViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "ResturantTableViewCell"
-<<<<<<< HEAD
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? ResturantTableViewCell else {
             fatalError("Holy smack")
         }
-        
-=======
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? ResturantTableViewCell else {
-            fatalError("Holy smack")
-        }
->>>>>>> master
         let resturant = resturantList[indexPath.row]
         if let label = cell.nameLabel{
             label.text = resturant.name
