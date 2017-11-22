@@ -59,7 +59,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             shelterView.removeFromSuperview()
             view.layer.mask = nil
         }
+        doHealthKit()
         return true
+    }
+    
+    private func doHealthKit(){
+        HealtkitHelper.authorizeHealthKit { (authorized, error) in
+            
+            guard authorized else {
+                
+                let baseMessage = "HealthKit Authorization Failed"
+                
+                if let error = error {
+                    print("\(baseMessage). Reason: \(error.localizedDescription)")
+                } else {
+                    print(baseMessage)
+                }
+                
+                return
+            }
+            
+            print("HealthKit Successfully Authorized.")
+            
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

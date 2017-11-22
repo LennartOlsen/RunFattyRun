@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 /**
  * TODO : Could be a UITableViewController, but creates sporadic errors
@@ -30,13 +31,25 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
     var allFoods = FoodBank()
     override func viewDidLoad() {
         super.viewDidLoad()
+
         headerView = tableView.tableHeaderView
         tableView.tableHeaderView = nil
         tableView.addSubview(headerView)
         tableView.contentInset = UIEdgeInsets(top:kTableHeaderHeight,left:0, bottom:0,right:0)
         tableView.contentOffset = CGPoint(x:0, y:-kTableHeaderHeight)
         updateHeaderView()
-        resturantList = ResturantRepository().getAll()
+    
+        if let loc = userLocation {
+            if let food = selectedFood {
+                let distance = Double(food.calories * 10) /** There is 10 metres on one calorie **/
+                let resturants = ResturantRepository().getByDistance(currentLocation : loc,
+                                                                     minDistance : distance * 0.5,
+                                                                     maxDistance: distance * 2)
+                NSLog("Resutrant count \(resturants.count)")
+                getOrderedResturants(resturants: resturants)
+                
+            }
+        }
     }
     
     override func viewWillAppear(_ animated : Bool) {
@@ -73,9 +86,59 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NSLog("You selected cell number: \(indexPath.row)!")
         self.selectedResturant = resturantList[indexPath.row]
         self.performSegue(withIdentifier: "goToChaseTheBurgerView", sender: self)
+    }
+    
+    func getOrderedResturants(resturants : [Resturant]? ){
+        // Source Coordinates
+        let sourceCoordinates = userLocation?.coordinate
+        let sourcePlacemark = MKPlacemark(coordinate: sourceCoordinates!)
+        let sourceItem = MKMapItem(placemark: sourcePlacemark)
+        if let rests = resturants {
+            for rest in rests {
+                // Destination Coordinates
+                
+                let destPlacemark = MKPlacemark(coordinate: rest.location.coordinate)
+                let destItem = MKMapItem(placemark: destPlacemark)
+                
+                let directionRequest = MKDirectionsRequest()
+                directionRequest.source = sourceItem
+                directionRequest.destination = destItem
+                directionRequest.transportType = .walking
+                
+                let directions = MKDirections(request: directionRequest)
+                directions.calculate(completionHandler: {
+                    response, error in
+                    
+                    guard let response = response else {
+                        if let error = error {
+                            print("Could not get proper directions: " + error.localizedDescription)
+                        }
+                        return
+                    }
+                    
+                    let route = response.routes[0]
+                    
+                    //NSLog(String(route.distance / 1000) + " KM FOR RESTURANT " + rest.name)
+                    rest.distanceFrom = route.distance
+                    self.addResturantToList(resturant : rest)
+                    
+                })
+            }
+        }
+        
+    }
+    
+    func addResturantToList(resturant : Resturant){
+        self.resturantList.append(resturant)
+        
+        let row = resturantList.count - 1
+        let indexPath = IndexPath(row : row, section : 0 )
+        
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: [indexPath], with: .automatic)
+        self.tableView.endUpdates()
     }
     
     func updateHeaderView() {
@@ -100,12 +163,12 @@ extension ResturantTableViewController:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        NSLog("Hello Name Label")
         return resturantList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "ResturantTableViewCell"
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? ResturantTableViewCell else {
             fatalError("Holy smack")
         }

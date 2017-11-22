@@ -23,7 +23,6 @@
 		70D36DCF1F84108B009868B7 /* ResturantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DCE1F84108B009868B7 /* ResturantTableViewCell.swift */; };
 		70D36DD11F841262009868B7 /* ResturantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D36DD01F841262009868B7 /* ResturantTableViewController.swift */; };
 		70E867EC1F723D3D00D578FC /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E867EB1F723D3D00D578FC /* FoodListViewController.swift */; };
-		70FDFC231F855D4800342463 /* StickyListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FDFC221F855D4800342463 /* StickyListHeaderView.swift */; };
 		7B3EF1501F7EEC65002C6A36 /* FoodBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3EF14F1F7EEC65002C6A36 /* FoodBank.swift */; };
 		7B9F23851F80052400680DD2 /* ChaseTheBurgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F23841F80052400680DD2 /* ChaseTheBurgerViewController.swift */; };
 		EA7C6DCADF02D57283B657B0 /* Pods_RunFattyRunUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B381CBC17E878A0FCBEA88 /* Pods_RunFattyRunUITests.framework */; };
@@ -76,7 +75,6 @@
 		70D36DCE1F84108B009868B7 /* ResturantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantTableViewCell.swift; sourceTree = "<group>"; };
 		70D36DD01F841262009868B7 /* ResturantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantTableViewController.swift; sourceTree = "<group>"; };
 		70E867EB1F723D3D00D578FC /* FoodListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
-		70FDFC221F855D4800342463 /* StickyListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyListHeaderView.swift; sourceTree = "<group>"; };
 		7B3EF14F1F7EEC65002C6A36 /* FoodBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBank.swift; sourceTree = "<group>"; };
 		7B9F23841F80052400680DD2 /* ChaseTheBurgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseTheBurgerViewController.swift; sourceTree = "<group>"; };
 		91B381CBC17E878A0FCBEA88 /* Pods_RunFattyRunUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunFattyRunUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,7 +214,6 @@
 			children = (
 				70D36DD01F841262009868B7 /* ResturantTableViewController.swift */,
 				70D36DCE1F84108B009868B7 /* ResturantTableViewCell.swift */,
-				70FDFC221F855D4800342463 /* StickyListHeaderView.swift */,
 			);
 			path = resturantlist;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 				70D36DCB1F83F3A1009868B7 /* Resturant.swift in Sources */,
 				70D36DCF1F84108B009868B7 /* ResturantTableViewCell.swift in Sources */,
 				70E867EC1F723D3D00D578FC /* FoodListViewController.swift in Sources */,
-				70FDFC231F855D4800342463 /* StickyListHeaderView.swift in Sources */,
 				709FC1781F8E196000850BBE /* HealtkitHelper.swift in Sources */,
 				70D36DD11F841262009868B7 /* ResturantTableViewController.swift in Sources */,
 				709FC1761F8E0A3A00850BBE /* Healther.swift in Sources */,
