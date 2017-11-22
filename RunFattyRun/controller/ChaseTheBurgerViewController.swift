@@ -132,6 +132,13 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         let lat = userLocation.coordinate.latitude
         print("LATLON MDAFAKA: \(long), \(lat)")
     }
+    /*
+     Bind to back button to open restaurants list
+     without creating new view
+     */
+    @IBAction func goBackToRestaurants(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToRestaurants", sender: self)
+    }
     
     /*
     func zoomToRegion() {

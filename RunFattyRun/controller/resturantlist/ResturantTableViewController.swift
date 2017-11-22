@@ -27,7 +27,8 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
     @IBOutlet weak var map: UIImageView!
     @IBOutlet weak var txtDescr: UITextView!
     @IBOutlet var tableView : UITableView!
-    
+    @IBAction func unwindToRestaurants(segue:UIStoryboardSegue) { }
+
     var allFoods = FoodBank()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,6 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
         tableView.contentInset = UIEdgeInsets(top:kTableHeaderHeight,left:0, bottom:0,right:0)
         tableView.contentOffset = CGPoint(x:0, y:-kTableHeaderHeight)
         updateHeaderView()
-    
         if let loc = userLocation {
             if let food = selectedFood {
                 let distance = Double(food.calories * 10) /** There is 10 metres on one calorie **/
