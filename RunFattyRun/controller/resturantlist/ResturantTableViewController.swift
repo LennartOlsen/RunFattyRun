@@ -39,17 +39,6 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
         tableView.contentInset = UIEdgeInsets(top:kTableHeaderHeight,left:0, bottom:0,right:0)
         tableView.contentOffset = CGPoint(x:0, y:-kTableHeaderHeight)
         updateHeaderView()
-        if let loc = userLocation {
-            if let food = selectedFood {
-                let distance = Double(food.calories * 10) /** There is 10 metres on one calorie **/
-                let resturants = ResturantRepository().getByDistance(currentLocation : loc,
-                                                                     minDistance : distance * 0.5,
-                                                                     maxDistance: distance * 2)
-                NSLog("Resutrant count \(resturants.count)")
-                getOrderedResturants(resturants: resturants)
-                
-            }
-        }
         updateTableListView()
     }
     
@@ -121,9 +110,14 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
                     
                     let route = response.routes[0]
                     
-                    //NSLog(String(route.distance / 1000) + " KM FOR RESTURANT " + rest.name)
                     rest.distanceFrom = route.distance
-                    self.addResturantToList(resturant : rest)
+                    
+                    if let food = self.selectedFood {
+                        NSLog("\(food.name) is ok with \(route.distance) >= \(food.getCalorieDistance()) -> \(route.distance >= food.getCalorieDistance())")
+                        if(route.distance >= food.getCalorieDistance() ){
+                            self.addResturantToList(resturant : rest)
+                        }
+                    }
                     
                 })
             }
@@ -138,10 +132,9 @@ class ResturantTableViewController: UIViewController, UITableViewDelegate, UIScr
         
         if let loc = userLocation {
             if let food = selectedFood {
-                let distance = Double(food.calories * 10) /** There is 10 metres on one calorie **/
                 let resturants = ResturantRepository().getByDistance(currentLocation : loc,
-                                                                     minDistance : distance * 0.5,
-                                                                     maxDistance: distance * 2)
+                                                                     minDistance : food.getCalorieDistance() * 0.9,
+                                                                     maxDistance: food.getCalorieDistance() * 2)
                 NSLog("Resutrant count \(resturants.count)")
                 getOrderedResturants(resturants: resturants)
                 

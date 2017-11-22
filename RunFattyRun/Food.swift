@@ -18,5 +18,9 @@ class Food {
         calories = foodCalories
         image = foodImage
     }
+    
+    func getCalorieDistance() -> Double {
+        return Double(self.calories * 10)
+    }
 }
 
