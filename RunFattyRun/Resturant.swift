@@ -19,9 +19,8 @@ class Resturant {
         distanceFrom = nil
     }
     
-    func DistanceFrom(sourceLocation : CLLocation){
-        
-        
+    func DistanceFrom(sourceLocation : CLLocation) -> Double{
+        return sourceLocation.distance(from: location)
     }
     
     func CaloriesEstimationFrom(sourceLocation : CLLocation){
