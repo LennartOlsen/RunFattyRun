@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import MapKit
-import Alamofire
 
 class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -87,7 +86,7 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
             let route = response.routes[0]
             self.mapView.add(route.polyline, level: .aboveRoads)
             if let dlbl = self.distanceLabel {
-                dlbl.text = String(route.distance / 1000) + " KM"
+                dlbl.text = self.roundDistance(distance: route.distance) + " KM"
             }
             let rekt = route.polyline.boundingMapRect
             self.mapView.setRegion(MKCoordinateRegionForMapRect(rekt), animated: true)
@@ -131,9 +130,18 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         let long = userLocation.coordinate.longitude
         let lat = userLocation.coordinate.latitude
         let distance = selectedResturant?.DistanceFrom(sourceLocation: userLocation)
-        distanceLabel.text = String(distance! / 1000) + " KM"
-        print("LATLON MDAFAKA: \(long), \(lat)")
+        
+        distanceLabel.text = roundDistance(distance: distance!) + " KM"
+        print("LATLON: \(long), \(lat)")
     }
+    
+    // Rounding to 3 decimal places
+    private func roundDistance(distance: Double) -> String{
+        //return String(Double(round(1000 * (distance / 1000)) / 1000))
+        return String(Double(round(distance) / 1000))
+    }
+    
+    
     /*
      Bind to back button to open restaurants list
      without creating new view
