@@ -2,7 +2,7 @@
 //  ChaseTheBurgerViewController.swift
 //  RunFattyRun
 //
-//  Created by Lazaros Totsas on 30/09/2017.
+//  Created by Lazaros Totsas, implemented by Robert Koszewski on 30/09/2017.
 //  Copyright © 2017 Burger Inc. All rights reserved.
 //
 
@@ -21,6 +21,8 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
+    var destItem : MKMapItem?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,7 +38,7 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         //locationManager.requestAlwaysAuthorization() // Interesting for later
         locationManager.requestWhenInUseAuthorization()
         
-        // Star Location Services
+        // Start Location Services
         if(CLLocationManager.locationServicesEnabled()){
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -56,11 +58,10 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
             print(destCoordinates)
         }
         let destPlacemark = MKPlacemark(coordinate: destCoordinates)
-        let destItem = MKMapItem(placemark: destPlacemark)
+        destItem = MKMapItem(placemark: destPlacemark)
         
         // Place Burger Placemark
         let annotation = MKPointAnnotation()
-        //let centerCoordinate = CLLocationCoordinate2D(latitude: 41, longitude:29)
         annotation.coordinate = destCoordinates
         annotation.title = "Title"
         mapView.addAnnotation(annotation)
@@ -85,6 +86,7 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
             
             let route = response.routes[0]
             self.mapView.add(route.polyline, level: .aboveRoads)
+
             if let dlbl = self.distanceLabel {
                 dlbl.text = self.roundDistance(distance: route.distance) + " KM"
             }
@@ -123,15 +125,53 @@ class ChaseTheBurgerViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         return annotationView
     }
+
+    func updateDirections(_ sourceCoordinates: CLLocation){
+        // Source Placemark
+        let sourcePlacemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: sourceCoordinates.coordinate.latitude, longitude: sourceCoordinates.coordinate.longitude))
+        let sourceItem = MKMapItem(placemark: sourcePlacemark)
+        
+        // Direction Request
+        let directionRequest = MKDirectionsRequest()
+        directionRequest.source = sourceItem
+        directionRequest.destination = destItem
+        directionRequest.transportType = .walking
+        //NSLog("Got User " + String(describing : sourceCoordinates) + " BURGER " + String(describing : destCoordinates) )
+        let directions = MKDirections(request: directionRequest)
+        directions.calculate(completionHandler: {
+            response, error in
+            
+            guard let response = response else {
+                if let error = error {
+                    print("Could not get proper directions: "+error.localizedDescription)
+                    NSLog(String(describing: error))
+                }
+                return
+            }
+            
+            let route = response.routes[0]
+            // Remove Old Overlay
+            self.mapView.removeOverlays(self.mapView.overlays)
+            
+            // Add new overlay
+            self.mapView.add(route.polyline, level: .aboveRoads)
+            if let dlbl = self.distanceLabel {
+                dlbl.text = self.roundDistance(distance: route.distance) + " KM"
+            }
+        })
+    }
     
     // Called when Location is Updated
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation: CLLocation = locations[0]
         let long = userLocation.coordinate.longitude
         let lat = userLocation.coordinate.latitude
-        let distance = selectedResturant?.DistanceFrom(sourceLocation: userLocation)
+        //let distance = selectedResturant?.DistanceFrom(sourceLocation: userLocation)
+        //distanceLabel.text = roundDistance(distance: distance!) + " KM" // Estimation
         
-        distanceLabel.text = roundDistance(distance: distance!) + " KM"
+        // Update Diretions
+        updateDirections(userLocation);
+
         print("LATLON: \(long), \(lat)")
     }
     
